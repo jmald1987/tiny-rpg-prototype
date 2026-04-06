@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dil0rvxnd71tl"]
+
+[ext_resource type="PackedScene" uid="uid://by56w1qtvum6a" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://b1ha7txf1swre" path="res://icon.svg" id="2_0wfyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+size = Vector2(240, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(40, 240)
+
+[node name="Main" type="Node2D" unique_id=1471889014]
+
+[node name="Player" parent="." unique_id=581890397 instance=ExtResource("1_o5qli")]
+
+[node name="World" type="Node2D" parent="." unique_id=1345911902]
+
+[node name="WallTop" type="StaticBody2D" parent="World" unique_id=343102232]
+position = Vector2(0, -140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WallTop" unique_id=724741173]
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/WallTop" unique_id=304099920]
+
+[node name="WallLeft" type="StaticBody2D" parent="World" unique_id=1507840126]
+position = Vector2(-140, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WallLeft" unique_id=256416630]
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/WallLeft" unique_id=267148416]
+
+[node name="WallRight" type="StaticBody2D" parent="World" unique_id=1778790612]
+position = Vector2(140, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WallRight" unique_id=254909386]
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/WallRight" unique_id=550888401]
+
+[node name="WallBottom" type="StaticBody2D" parent="World" unique_id=162034826]
+position = Vector2(0, 140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WallBottom" unique_id=175795560]
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/WallBottom" unique_id=1897003218]
+
+[node name="Floor" type="ColorRect" parent="World" unique_id=759393280]
+z_index = -10
+custom_minimum_size = Vector2(1200, 800)
+offset_left = -600.0
+offset_top = -400.0
+offset_right = 600.0
+offset_bottom = 400.0
+color = Color(0.47058824, 0.6666667, 0.47058824, 1)
+
+[node name="Marker1" type="Sprite2D" parent="World" unique_id=1688948209]
+position = Vector2(200, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0wfyh")
+
+[node name="Marker2" type="Sprite2D" parent="World" unique_id=1141184884]
+position = Vector2(0, -200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0wfyh")
+
+[node name="Marker3" type="Sprite2D" parent="World" unique_id=983245929]
+position = Vector2(-200, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0wfyh")
+
+[node name="Marker4" type="Sprite2D" parent="World" unique_id=1388544364]
+position = Vector2(0, 200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0wfyh")
