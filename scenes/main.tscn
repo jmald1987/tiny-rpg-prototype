@@ -76,6 +76,7 @@ texture = ExtResource("4_jyhfs")
 position = Vector2(170, -131)
 script = ExtResource("3_sugp2")
 resource_type = "ore"
+interaction_type = "mine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/OreNode1" unique_id=1176386721]
 shape = SubResource("CircleShape2D_0wfyh")
@@ -99,6 +100,26 @@ offset_top = 50.0
 offset_right = 60.0
 offset_bottom = 73.0
 text = "Ore: 0"
+
+[node name="ActionLabel" type="Label" parent="UI" unique_id=711428209]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+text = "\"\""
+horizontal_alignment = 1
+
+[node name="FeedbackLabel" type="Label" parent="UI" unique_id=2033982135]
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 60.0
+offset_bottom = 103.0
+text = "\"\""
 
 [connection signal="body_entered" from="World/WoodNode1" to="Player" method="_on_resource_node_body_entered"]
 [connection signal="body_entered" from="World/WoodNode1" to="World/WoodNode1" method="_on_body_entered"]
